@@ -1,7 +1,7 @@
 var React = require('react');
 
 class Seconds extends React.Component{
-  constructor(props){
+  constructor(){
     super(); 
     this.state = {
       seconds: new Date().getSeconds()    
@@ -11,15 +11,17 @@ class Seconds extends React.Component{
   componentDidMount(){
     var that = this;
     setInterval(function(){
-      console.log(that.state.seconds); 
+      console.log(that.state.seconds)
+      that.setState({seconds: new Date().getSeconds()});
     }, 500, that);  
   }
   render(){
     return(
       <div>
         <p>asdfasd</p>
-        <div 
-          dangerouslySetInnerHTML={{__html: this.state.seconds.value}}>
+        <p id='colon'>:</p>
+        <div>
+          {this.state.seconds}
         </div>
       </div>
     );    

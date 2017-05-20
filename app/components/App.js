@@ -33,7 +33,7 @@ function checkTime(i){
 class App extends React.Component{
   render(){
     return (
-      <div>
+      <div id='container'>
         <Seconds />
       </div>
     ) 
