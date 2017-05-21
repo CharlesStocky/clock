@@ -18,9 +18,8 @@ class Seconds extends React.Component{
   render(){
     return(
       <div>
-        <p>asdfasd</p>
-        <p id='colon'>:</p>
-        <div>
+        <p>:</p>
+        <div id='main'>
           {this.state.seconds}
         </div>
       </div>

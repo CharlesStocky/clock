@@ -1,6 +1,7 @@
 var React = require('react'); 
 require('../index.css'); 
-var Seconds = require('./Seconds.js')
+var Seconds = require('./Seconds.js'); 
+var Minute = require('./Minute.js');
 
 function hourStart(){
   var d = new Date();  
@@ -34,6 +35,7 @@ class App extends React.Component{
   render(){
     return (
       <div id='container'>
+        <Minute />
         <Seconds />
       </div>
     ) 
