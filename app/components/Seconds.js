@@ -11,9 +11,13 @@ class Seconds extends React.Component{
   componentDidMount(){
     var that = this;
     setInterval(function(){
-      console.log(that.state.seconds)
-      that.setState({seconds: new Date().getSeconds()});
-    }, 500, that);  
+      if(that.state.seconds < 10){
+        console.log(that.state.seconds)
+        that.setState({seconds: '0' + new Date().getSeconds()});
+      } else {
+        that.setState({seconds: new Date().getSeconds()}) 
+      }
+    }, 500, that)  
   }
   render(){
     return(

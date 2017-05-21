@@ -1,6 +1,6 @@
 var React = require('react'); 
 
-class Minute extends React.Component{
+class Minutes extends React.Component{
   constructor(){
     super() 
     this.state = {
@@ -11,7 +11,11 @@ class Minute extends React.Component{
   componentDidMount(){
     var that = this; 
     setInterval(function(){
-      that.setState({minutes: new Date().getMinutes()}) 
+      if(that.state.minutes < 10){
+        that.setState({minutes: "" + 0 + new Date().getMinutes()}) 
+      }else{
+        that.setState({minutes: new Date().getMinutes()}) 
+      }
     }, 500, that) 
   }
   render(){
@@ -23,4 +27,4 @@ class Minute extends React.Component{
   }
 }
 
-module.exports = Minute;
+module.exports = Minutes;
